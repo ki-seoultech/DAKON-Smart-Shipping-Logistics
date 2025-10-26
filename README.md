@@ -54,23 +54,25 @@ We applied the following data preparation steps before model training:
 The **RealMLP-TD (Tabular Deep)** model was implemented via **PyTabKit** library.  
 It uses sequential dense layers with label smoothing, dropout, and adaptive learning rates.
 
-```python
-model = RealMLP_TD_Classifier(
-    device='cuda',
-    random_state=42,
-    n_cv=1,
-    n_refit=1,
-    n_epochs=500,
-    batch_size=768,
-    hidden_sizes=[512, 256, 256, 128],
-    val_metric_name='cross_entropy',
-    lr=0.00643,
-    use_ls=True,
-    verbosity=1,
-    use_early_stopping=True
-)
 
 ---
+
+### 
+```markdown
+    model = RealMLP_TD_Classifier(
+        device='cuda',
+        random_state=42,
+        n_cv=1,
+        n_refit=1,
+        n_epochs=500,
+        batch_size=768,
+        hidden_sizes=[512, 256, 256, 128],
+        val_metric_name='cross_entropy',
+        lr=0.00643,
+        use_ls=True,
+        verbosity=1,
+        use_early_stopping=True
+    )
 
 ## 🧱 Component Details
 
