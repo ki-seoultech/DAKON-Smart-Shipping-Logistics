@@ -1,4 +1,4 @@
-# 🚢 Smart Shipping & Logistics X AI Mission Challenge (2025)
+# 🚢 Smart Shipping X AI Mission Challenge (2025)
    
  **Task:** Ship operational state classification using sensor tabular data  
  **Model:** RealMLP-TD + Targeted BCMixUp + Optuna Joint Optimization  
@@ -166,7 +166,7 @@ aug_mult = 1.0
 
 ### 🏆 Achievements
 - **Final Leaderboard Macro-F1:** **0.83446**
-- **Ranking:** Top 10 % achieve!
+- **Ranking:** Top 10 % achieved! (33/521)
 - **Result Screenshot:**
 
 <img width="600" height="40" alt="스마트해운문류 AI챌린지 리더보드 최종결과" src="https://github.com/user-attachments/assets/beaa6bbb-b8c6-4676-9d63-739a8bef4602" />
