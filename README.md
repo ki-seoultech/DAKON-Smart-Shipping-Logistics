@@ -89,7 +89,7 @@ Improved decision boundary smoothness and **Macro-F1 +0.3 ~ +0.8pt**
 | **Augmentation** | alpha, lam_low, lam_high, p_apply, aug_mult | [0.2–1.0], [0.2–0.8], [0.3–1.0], [0–2] |
 
 **Best Trial Example:**
-```python
+python
 hidden_sizes = [512, 256, 256, 128]
 lr = 0.006
 alpha = 0.43
