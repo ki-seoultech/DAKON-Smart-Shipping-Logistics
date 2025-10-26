@@ -165,7 +165,12 @@ aug_mult = 1.0
 | **Final OOF Macro-F1** | **0.885+** |
 
 ### 🏆 Achievements
-<img width="574" height="29" alt="스마트해운문류 AI챌린지 리더보드 최종결과" src="https://github.com/user-attachments/assets/e43d0eff-24c0-414f-8509-a5511a99a172" />
+- **Final Leaderboard Macro-F1:** **0.83446**
+- **Ranking:** Top 10 % (Official Leaderboard)
+- **Result Screenshot:**
+<p align="center">
+  <img src="./results/스마트해운문류 AI챌린지 리더보드 최종결과.png" alt="Leaderboard result" width="550"/>
+</p>
 
 - Improved **generalization stability** without additional external data.
 - Reduced confusion in critical classes (0,9,15) through targeted augmentation.
