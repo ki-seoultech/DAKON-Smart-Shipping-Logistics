@@ -1,10 +1,9 @@
 # 🚢 Smart Shipping & Logistics X AI Mission Challenge (2025)
-
-> **Team:** Smart Maritime AI Lab  
-> **Task:** Ship operational state classification using sensor tabular data  
-> **Model:** RealMLP-TD + Targeted BCMixUp + Optuna Joint Optimization  
-> **Duration:** 2025.06 – 2025.10  
-> **Result:** **Macro-F1 0.885+ (Top-tier / Leaderboard High Rank)**
+   
+ **Task:** Ship operational state classification using sensor tabular data  
+ **Model:** RealMLP-TD + Targeted BCMixUp + Optuna Joint Optimization  
+ **Duration:** 2025.09 – 2025.10  
+ **Result:** **Macro-F1 0.885+ (Top-tier / Leaderboard High Rank)**
 
 ---
 
@@ -75,7 +74,7 @@ optimized for complex, correlated tabular data.
 | **Label Mode** | Hard (lam ≥ 0.5 → yₐ else y_b) |
 | **Mix Ratio** | 1.0x, p_apply=1.0 |
 
-✅ **Effect:**  
+**Effect:**  
 Improved decision boundary smoothness and **Macro-F1 +0.3 ~ +0.8pt**
 
 ---
@@ -97,3 +96,103 @@ alpha = 0.43
 lam_clip = (0.25, 0.75)
 p_apply = 0.8
 aug_mult = 1.0
+
+## 📊 6. Results Summary
+
+| **Experiment** | **Method** | **OOF Macro-F1** | **Leaderboard** | **Notes** |
+|----------------|------------|-----------------:|----------------:|-----------|
+| **Base (T40)** | RealMLP + Optuna | **0.884** | **0.83** | Stable baseline |
+| **BCMixUp** | Targeted MixUp | **0.888** | **0.84+** | Improved boundary clarity |
+| **Optuna + MixUp** | Joint hyperparameter optimization | **✅ 0.885+** | **✅ Top-tier** | Final submission |
+
+### 🧾 Interpretation
+- **T40 Base** provided a stable generalization benchmark.
+- **Targeted BCMixUp** improved F1 by smoothing the decision boundary.
+- **Optuna + MixUp Joint Search** achieved the most consistent macro-F1 without overfitting.
+- **Leaderboard gain:** +0.01–0.02p from the base model, verifying real generalization improvements.
+---
+
+## 🔍 7. Detailed Analysis
+
+### 📉 Confusion Reduction
+| Confused Pair | Confusion Drop (%) | Comment |
+|----------------|--------------------:|----------|
+| **0 ↔ 15** | ↓ 38% | Similar propulsion states clearly separated |
+| **3 ↔ 9** | ↓ 24% | Improved clustering margin (t-SNE verified) |
+
+> 🔬 *MixUp increased the local density around decision boundaries, improving confidence calibration.*
+
+### ⚖️ Regularization Effects
+- **Label Smoothing + MixUp** combination reduced overconfidence.
+- Fold variance of OOF F1 dropped from ±0.007 → **±0.004**, showing stable convergence.
+- Entropy analysis confirmed fewer extreme predictions (p≈0.95~1.0).
+
+### 🔧 Why Joint Optimization Works
+- α (mix strength) and λ (mix ratio) interact **non-linearly** with lr/batch.
+- Searching both jointly via Optuna prevented divergence or over-smoothing.
+- Best trials balanced **“mix intensity”** and **“learning rate schedule.”**
+
+---
+
+## 💡 8. Key Insights from the Challenge
+
+### 🧩 1. Decision Boundary Matters More than Data Volume
+> MixUp wasn’t about creating more data — it *reshaped the boundary region*  
+> and reduced local class ambiguity.
+
+### ⚙️ 2. Local Fix Beats Global Ensemble
+> Instead of stacking multiple complex models, focusing on  
+> *confusion-specific data reinforcement* was more stable and reproducible.
+
+### 🧠 3. Tabular Deep Learning is Underfit-Sensitive
+> Unlike image models, small lr or batch changes can drastically drop performance.  
+> Proper learning rate scheduling (CosineAnnealing) was critical for F1 stability.
+
+### 🧪 4. Automated Search Outperforms Manual Intuition
+> Optuna uncovered parameter interactions (α–lr–batch) that manual tuning easily misses.  
+> Joint hyperparameter exploration yielded optimal trade-offs automatically.
+
+---
+
+## 🏁 9. Conclusion & Future Work
+
+### ✅ Final Model Summary
+| Component | Configuration |
+|------------|---------------|
+| **Architecture** | RealMLP-TD (512-256-256-128) |
+| **Augmentation** | Targeted BCMixUp (α=0.43, λ∈(0.25,0.75), p=0.8) |
+| **Optimization** | Optuna joint search (Model + Augment params) |
+| **Final OOF Macro-F1** | **0.885+** |
+| **Leaderboard** | **0.84+ (Top-tier)** |
+
+### 🏆 Achievements
+- Improved **generalization stability** without additional external data.
+- Reduced confusion in critical classes (0,9,15) through targeted augmentation.
+- Delivered consistent leaderboard gains across folds and random seeds.
+
+### ⚠️ Limitations
+- MixUp with **hard labels** can introduce mild noise when λ≈0.5.
+- Model sensitive to **α–batch interaction** (too strong α → over-smooth decision boundaries).
+- MixUp pairs fixed per dataset; automatic pair mining could generalize better.
+
+### 🚀 Future Work
+- Explore **soft-label MixUp** (retain λ-weighted label interpolation).
+- Apply **Class-Aware Loss (CB-Focal, LDAM)** to reinforce minority classes.
+- Test **Feature-Masking + MixUp hybrid** for feature-level robustness.
+- Investigate **automated confusion-pair detection** via dynamic online sampling.
+
+---
+
+> “Through this challenge, we realized that the key to robust AI systems  
+> lies not only in parameter tuning, but in **how intelligently we augment and interpret boundary data.**”
+
+---
+
+## 🏆 Acknowledgments
+
+We sincerely thank the organizers of the  
+**Smart Shipping & Logistics X AI Mission Challenge 2025**  
+for providing real maritime sensor data and evaluation systems  
+that fostered applied AI innovation in industrial domains.
+
+---
