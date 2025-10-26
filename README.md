@@ -102,8 +102,8 @@ aug_mult = 1.0
 | **Experiment** | **Method** | **OOF Macro-F1** | **Leaderboard** | **Notes** |
 |----------------|------------|-----------------:|----------------:|-----------|
 | **Base (T40)** | RealMLP + Optuna | **0.884** | **0.83** | Stable baseline |
-| **BCMixUp** | Targeted MixUp | **0.888** | **0.84+** | Improved boundary clarity |
-| **Optuna + MixUp** | Joint hyperparameter optimization | **✅ 0.885+** | **✅ Top-tier** | Final submission |
+| **BCMixUp** | Targeted MixUp | **0.888** | **0.83+** | Improved boundary clarity |
+| **Optuna + MixUp** | Joint hyperparameter optimization | **0.885+** | **0.83446** | Final submission |
 
 ### 🧾 Interpretation
 - **T40 Base** provided a stable generalization benchmark.
@@ -163,9 +163,10 @@ aug_mult = 1.0
 | **Augmentation** | Targeted BCMixUp (α=0.43, λ∈(0.25,0.75), p=0.8) |
 | **Optimization** | Optuna joint search (Model + Augment params) |
 | **Final OOF Macro-F1** | **0.885+** |
-| **Leaderboard** | **0.84+ (Top-tier)** |
 
 ### 🏆 Achievements
+<img width="574" height="29" alt="스마트해운문류 AI챌린지 리더보드 최종결과" src="https://github.com/user-attachments/assets/e43d0eff-24c0-414f-8509-a5511a99a172" />
+
 - Improved **generalization stability** without additional external data.
 - Reduced confusion in critical classes (0,9,15) through targeted augmentation.
 - Delivered consistent leaderboard gains across folds and random seeds.
@@ -188,11 +189,3 @@ aug_mult = 1.0
 
 ---
 
-## 🏆 Acknowledgments
-
-We sincerely thank the organizers of the  
-**Smart Shipping & Logistics X AI Mission Challenge 2025**  
-for providing real maritime sensor data and evaluation systems  
-that fostered applied AI innovation in industrial domains.
-
----
