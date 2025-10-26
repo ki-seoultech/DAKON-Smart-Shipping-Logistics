@@ -1,0 +1,11 @@
+rank,combo,method,macro_f1,path
+1,"(2, 9, 20, 40, 43, 81, 84, 85, 89)",stacking,0.8928930914750552,/content/drive/MyDrive/t40_final_ensemble/submission_top1.csv
+2,"(2, 9, 20, 40, 43, 84, 85, 89)",stacking,0.8922836135684723,/content/drive/MyDrive/t40_final_ensemble/submission_top2.csv
+3,"(2, 9, 40, 43, 81, 84, 85, 89)",stacking,0.8920846330190254,/content/drive/MyDrive/t40_final_ensemble/submission_top3.csv
+4,"(2, 9, 20, 81, 84, 85)",stacking,0.8920606620888644,/content/drive/MyDrive/t40_final_ensemble/submission_top4.csv
+5,"(9, 20, 40, 81, 84, 85)",stacking,0.8920606620888644,/content/drive/MyDrive/t40_final_ensemble/submission_top5.csv
+6,"(2, 9, 43, 81, 84, 85, 89)",stacking,0.8920135594728468,/content/drive/MyDrive/t40_final_ensemble/submission_top6.csv
+7,"(9, 40, 43, 81, 84, 85, 89)",stacking,0.8919697870344999,/content/drive/MyDrive/t40_final_ensemble/submission_top7.csv
+8,"(2, 9, 20, 43, 81, 84, 85, 89)",stacking,0.8918300434306632,/content/drive/MyDrive/t40_final_ensemble/submission_top8.csv
+9,"(9, 20, 40, 43, 81, 84, 85, 89)",stacking,0.8918300434306632,/content/drive/MyDrive/t40_final_ensemble/submission_top9.csv
+10,"(2, 9, 20, 40, 81, 84, 85, 89)",stacking,0.8917466472859333,/content/drive/MyDrive/t40_final_ensemble/submission_top10.csv
