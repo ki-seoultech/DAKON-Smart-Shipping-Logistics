@@ -166,11 +166,10 @@ aug_mult = 1.0
 
 ### 🏆 Achievements
 - **Final Leaderboard Macro-F1:** **0.83446**
-- **Ranking:** Top 10 % (Official Leaderboard)
+- **Ranking:** Top 10 % achieve!
 - **Result Screenshot:**
-<p align="center">
-  <img src="./results/스마트해운문류 AI챌린지 리더보드 최종결과.png" alt="Leaderboard result" width="550"/>
-</p>
+
+<img width="600" height="40" alt="스마트해운문류 AI챌린지 리더보드 최종결과" src="https://github.com/user-attachments/assets/beaa6bbb-b8c6-4676-9d63-739a8bef4602" />
 
 - Improved **generalization stability** without additional external data.
 - Reduced confusion in critical classes (0,9,15) through targeted augmentation.
