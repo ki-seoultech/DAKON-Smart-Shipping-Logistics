@@ -97,6 +97,8 @@ lam_clip = (0.25, 0.75)
 p_apply = 0.8
 aug_mult = 1.0
 
+---
+
 ## 📊 6. Results Summary
 
 | **Experiment** | **Method** | **OOF Macro-F1** | **Leaderboard** | **Notes** |
@@ -191,5 +193,4 @@ aug_mult = 1.0
 > “Through this challenge, we realized that the key to robust AI systems  
 > lies not only in parameter tuning, but in **how intelligently we augment and interpret boundary data.**”
 
----
 
